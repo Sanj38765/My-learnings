@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	char word[100]=("sanjai");
+	int  i=0;
+	for(i=0;word[i] !='\0';i++){
+		if(word[i]>90){
+			word[i]-=32;
+		}
+	}
+	printf("%s\n",word);
+	return 0;
+}
