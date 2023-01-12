@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	char word[100]=("aeiosb g t");
+	char vowel[100]=("aeiouAEIOU");
+	int len =0, i=0,cnt=0,j;
+	while (word[i] !='\0'){
+		for(j=0; vowel[j] != '\0'; j++){
+			if(word[i]==vowel[j]){
+				printf("%c",word[i]);
+				cnt++;
+				break;
+			}
+		}
+		i++;
+		len++;
+	}
+	printf("%d\n",cnt);
+	return 0;
+}
