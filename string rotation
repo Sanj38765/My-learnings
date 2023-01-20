@@ -1,0 +1,11 @@
+#include<iostream>
+#include<string>
+int main(){
+	int num;
+	scanf("%d",&num);
+	int sum=0;
+	sum=num%10 + (num%100)/10 +num/100;
+	printf("%d",sum*111);
+
+	return 0;
+}
