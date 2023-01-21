@@ -1,0 +1,16 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+int main() {
+    // your code goes here
+	char s[101];
+	cin>>s;
+	int i=0,j=strlen(s)-1,hugs=0;
+	while(i<j){
+		if(s[i++]!=s[j--]){
+			hugs++;
+		}
+	}
+	cout<<hugs;
+    return 0;
+}
