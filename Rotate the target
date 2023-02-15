@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // your code goes here
+	int n,i,j;
+	cin>>n;
+	int k[n][n];
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			cin>>k[i][j];
+		}
+	}
+	int s[n][n];
+		for(i=0;i<n;i++){
+			for(j=0;j<n;j++){
+			 s[j][n-1-i]=k[i][j];
+			}
+		}
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			cout<<s[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+    return 0;
+}
