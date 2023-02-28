@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // your code goes here
+int m,n,i,j;
+long long int cont,ans=0;
+	cin>>m>>n;
+	long long int a[m][n];
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+			cin>>a[i][j];
+		}
+	}
+	long long int mod=1e9+7;
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+	cont=(a[m][n]%mod)*((i+1)%mod)*((j+1)%mod)%mod*(((n-j)%mod)*((m-i)%mod)%mod);
+	ans=((ans%mod+cont%mod)%mod);
+		}
+	}
+	cout<<ans;
+	return 0;
+}
