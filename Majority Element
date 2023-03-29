@@ -23,3 +23,33 @@ int main(){
 	cout<<temp<<endl;
 		return 0;
 	}
+
+
+Moore ALgorithm
+#include <iostream>
+using namespace std;
+int main() {
+    // your code goes here
+	int n;
+	cin>>n;
+	
+	int arr[n];
+	
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	
+	int count = 0;
+	int majority;
+
+        for (int num : arr) {
+            if (count == 0) {
+                 majority = num;
+            }
+            count += (num ==  majority) ? 1 : -1;
+        }
+
+        cout<< majority<<endl;
+	
+    return 0;
+}
