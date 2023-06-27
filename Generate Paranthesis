@@ -1,0 +1,37 @@
+class Solution {
+public:
+void printPara(int n,vector<char>&s,vector<string>&ans,int l, int r,int i){
+    if(i==s.size()){
+        string str="";
+    for(int j=0;j<s.size();j++){
+    str+=s[j];
+    ans.push_back(str);
+    return;
+    }
+    }
+    if(l==r){
+        s[i]='(';
+        printPara(n,s,ans,l+1,r,i+1);
+        
+    }
+    else if(l>r){
+    if(l==n)
+    {
+        s[i]=')';
+        printPara(n,s,ans,l,r+1,i+1);
+    }
+    else if(l<n){
+        s[i]='(';
+        printPara(n,s,ans,l+1,r,i+1);
+        s[i]=')';
+        printPara(n,s,ans,l,r+1,i+1);
+    }    
+    }
+}
+    vector<string>generateParenthesis(int n){
+    vector<string>ans;
+    vector<char>s(2*n);
+    printPara(n,s,ans,0,0,0);
+    return ans;
+    }
+};
