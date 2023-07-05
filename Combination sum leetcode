@@ -1,0 +1,30 @@
+class Solution {
+public:
+    void fn(int i, int c, int k,int sum,vector<int>&v,vector<vector<int>>&ans){
+        if(sum==0&c==k){
+            ans.push_back(v);
+            return;
+        }
+    if(c==k)return;
+    if(sum<0)return;
+    if(i>9)return;
+    v.push_back(i);
+    fn(i+1,c+1,k,sum-i,v,ans);
+    v.pop_back();
+    fn(i+1,c,k,sum,v,ans);
+    }
+vector<vector<int>> combinationSum3(int k, int n) {
+
+vector<vector<int>> ans;
+
+vector<int> v;
+
+v.reserve( 9);
+
+fn( 1 , 0 , k , n , v , ans);
+
+return ans;
+
+}
+
+};
